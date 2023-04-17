@@ -1,9 +1,19 @@
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+#  push:
+#    branches: [ main ]
+
+#  pull_request:
+
+#    branches: [ main ]
+
+  workflow_dispatch:
+    # Inputs the workflow expects.
+    inputs:
+      tfpath:
+        description: 'TF File Path'     
+        required: false
+        default: 'infrastructure/terraform'
 
 name: AWS EKS setup
 
